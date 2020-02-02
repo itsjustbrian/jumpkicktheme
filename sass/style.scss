@@ -3,11 +3,184 @@
     Author: Brian Ferch
 */
 
+@use "include/globals";
+
 body {
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Lato, Arial, sans-serif;
+  color: globals.$primary-font-color;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 a {
-  display: block;
+  display: flex;
+  color: globals.$theme-primary-color;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: globals.$primary-font-color;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h5, h6 {
+  color: globals.$secondary-font-color;
+  font-weight: normal;
+}
+
+ul, ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-button {
+  cursor: pointer;
+  padding: globals.$icon-padding;
+  color: globals.$primary-font-color;
+  label {
+    cursor: pointer;
+  }
+}
+
+.full-page-modal {
+  @include globals.stretch;
+  position: fixed;
+  height: 100vh;
+  background-color: #ffffff;
+  &:not(.open) {
+    display: none;
+  }
+}
+
+header {
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px -2px;
+  @media #{globals.$mobile-query} {
+    box-shadow: unset;
+  }
+
+  section:not(.top-section) {
+    padding-left: globals.$main-padding;
+    padding-right: globals.$main-padding;
+  }
+
+  .top-nav {
+    height: globals.$top-nav-height;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: globals.$main-padding - globals.$icon-padding;
+    padding-right: globals.$main-padding - globals.$icon-padding;
+  }
+
+  .search-form {
+    @include globals.stretch;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+
+    .search-box {
+      pointer-events: initial;
+      width: 100%;
+      height: 100%;
+      padding: 0 12px;
+      font-size: 16px;
+      border: none;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      transform: translate3d(0, -100%, 0);
+      transition: transform 0.2s;
+      &:focus {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.2s;
+      }
+    }
+  }
+
+  .social-media-icons {
+    &.desktop-only {
+      margin-left: auto;
+    }
+  }
+
+  #top-menu-modal {
+    align-items: center;
+    padding-left: globals.$main-padding - globals.$icon-padding;
+    padding-right: globals.$main-padding - globals.$icon-padding;
+    .close-modal {
+      align-self: flex-end;
+      position: relative;
+      top: (globals.$top-nav-height - globals.$icon-touch-size) / 2;
+    }
+  }
+
+  .logo-section {
+    align-items: center;
+  }
+
+  .menu-section {
+    justify-content: center;
+  }
+}
+
+main {
+  margin-top: globals.$main-spacing;
+  margin-bottom: globals.$main-spacing;
+  padding-left: globals.$main-padding;
+  padding-right: globals.$main-padding;
+}
+
+footer {
+  height: globals.$footer-height;
+  padding-left: globals.$main-padding;
+  padding-right: globals.$main-padding;
+  padding-bottom: globals.$main-padding * 2;
+  justify-content: center;
+  align-items: center;
+  border-top: globals.$divider-line;
+}
+
+.custom-logo {
+  height: globals.$top-nav-height;
+  width: auto;
+}
+
+@media #{globals.$mobile-query} {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: globals.$mobile-break - 1) {
+  .desktop-only {
+    display: none;
+  }
 }

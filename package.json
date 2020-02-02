@@ -4,9 +4,19 @@
   "description": "",
   "main": "index.php",
   "scripts": {
-    "watch": "sass --watch sass/style.scss style.css & tsc --watch"
+    "watch": "concurrently --kill-others \"npm run watch-sass\" \"npm run watch-ts\"",
+    "watch-sass": "sass --watch sass/style.scss:style.css sass/src/:css/",
+    "watch-ts": "tsc --watch",
+    "build": "sass sass/style.scss:style.css sass/src/:css/ && postcss style.css --use autoprefixer --map=false --replace && postcss css/ --use autoprefixer --map=false --replace && tsc",
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "concurrently": "^5.1.0",
+    "postcss": "^7.0.26",
+    "postcss-cli": "^7.1.0",
+    "sass": "^1.25.0",
+    "typescript": "^3.7.5"
+  }
 }

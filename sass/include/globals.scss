@@ -1,0 +1,34 @@
+$mobile-break: 800px;
+$mobile-small-break: 510px;
+$desktop-small-break: 1055px;
+$mobile-query: "screen and (min-width: #{$mobile-break})";
+$mobile-small-query: "screen and (min-width: #{$mobile-small-break})";
+$desktop-small-query: "screen and (min-width: #{$desktop-small-break})";
+$grid-column-gap: 20px;
+$grid-row-gap: 32px;
+$main-padding: 16px;
+$main-spacing: 32px;
+$top-nav-height: 56px;
+$footer-height: 185px;
+$icon-size: 24px;
+$icon-touch-size: 48px;
+$icon-padding: ($icon-touch-size - $icon-size) / 2;
+$divider-line: 1px solid #ddd;
+
+$theme-primary-color: #34ca96;
+$primary-font-color: #333;
+$secondary-font-color: #666;
+
+@mixin main-content {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin stretch {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,19 @@
+@use "../include/globals";
+@use "../include/campaign-info";
+
+.posts {
+  
+  @include globals.main-content;
+  display: grid;
+  column-gap: globals.$grid-column-gap;
+  row-gap: globals.$grid-row-gap;
+
+  @media #{globals.$mobile-small-query} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{globals.$mobile-query} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}

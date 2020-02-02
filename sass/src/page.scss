@@ -1,0 +1,14 @@
+
+@use "../include/globals";
+
+$page-width: 800px;
+
+article {
+  @include globals.main-content;
+  max-width: $page-width;
+
+  .page-content {
+    @include globals.main-content;
+    max-width: $page-width - 55px;
+  }
+}

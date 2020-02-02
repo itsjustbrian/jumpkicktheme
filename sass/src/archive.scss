@@ -1,0 +1,36 @@
+@use "../include/globals";
+@use "../include/campaign-info";
+
+.posts {
+  @include globals.main-content;
+  
+  display: grid;
+  row-gap: globals.$grid-row-gap;
+  column-gap: globals.$grid-column-gap;
+
+  @media #{globals.$mobile-small-query} {
+    grid: "first-post first-post"
+          / 1fr 1fr;
+    
+    .first-post {
+      grid-area: first-post;
+    }
+  }
+
+  @media #{globals.$mobile-query} {
+    grid: "first-post first-post second-post"
+          "first-post first-post third-post"
+          / 1fr 1fr 1fr;
+
+    column-gap: globals.$grid-column-gap * 2;
+          
+    .second-post {
+      grid-area: second-post;
+    }
+
+    .third-post {
+      grid-area: third-post;
+    }
+  }
+
+}

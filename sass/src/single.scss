@@ -1,0 +1,37 @@
+
+@use "../include/globals";
+@use "../include/fundraising-info";
+
+article {
+  @media #{globals.$mobile-query} {
+    @include globals.main-content;
+
+    display: grid;
+    grid: "title title"
+          "image side-bar"
+          "content side-bar"
+          / 2fr 1fr;
+    column-gap: globals.$grid-column-gap;
+
+    h1 {
+      grid-area: title;
+    }
+
+    img {
+      grid-area: image;
+    }
+
+    aside {
+      grid-area: side-bar;
+    }
+
+    .post-content {
+      grid-area: content;
+    }
+
+    .fundraising-info {
+      flex-direction: column-reverse;
+    }
+  }
+
+}

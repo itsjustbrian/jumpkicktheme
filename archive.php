@@ -1,13 +1,15 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
-<h1><?php single_cat_title();?></h1>
+<main>
+  <?php if (have_posts()) : ?>
 
-<?php if (have_posts()) : while(have_posts()) : the_post();?>
+    <?php echo campaign_list(array('large', 'thumbnail')) ?>
 
-    <h3><?php the_title();?></h3>
-    <?php the_excerpt();?>
-    <a href="<?php the_permalink();?>">Read more</a>
+  <?php else : ?>
 
-<?php endwhile; endif;?>
+    <h1>Nothin' here yet!</h1>
 
-<?php get_footer();?>
+  <?php endif; ?>
+</main>
+
+<?php get_footer(); ?>

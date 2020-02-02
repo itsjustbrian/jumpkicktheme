@@ -1,0 +1,36 @@
+
+<?php function campaign_list($imgSizes) { ob_start(); ?>
+
+  <?php
+    $count = 0;
+
+    $postClasses = array(
+      'first-post',
+      'second-post',
+      'third-post'
+    );
+  ?>
+
+  <ol class="posts col">
+    <?php while (have_posts()) : the_post(); $count++; ?>
+
+      <li class="post <?php if ($count < 4) echo $postClasses[$count - 1]; ?>">
+        <article class="col">
+          <a href="<?php the_permalink(); ?>">
+            <?php
+              if ($count < count($imgSizes)) $imgSize = $imgSizes[$count - 1];
+              else $imgSize = $imgSizes[count($imgSizes) - 1];
+              the_post_thumbnail($imgSize);
+            ?>
+          </a>
+          <a href="<?php the_permalink(); ?>">
+            <h3><?php the_title(); ?></h3>
+          </a>
+          <?php get_template_part('fundraising-info'); ?>
+        </article>
+      </li>
+
+    <?php endwhile; ?>
+  </ol>
+  
+<?php return ob_get_clean(); } ?>

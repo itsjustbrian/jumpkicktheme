@@ -1,18 +1,17 @@
-<?php get_header();?>
+<?php get_header(); ?>
 
-<h1>Search Results for: <?php echo get_search_query();?></h1>
+<main>
+  <h1>Search Results for: <?php echo get_search_query(); ?></h1>
 
-<?php if (have_posts()) : while(have_posts()) : the_post();?>
+  <?php if (have_posts()) : ?>
 
-  <h3><?php the_title();?></h3>
-  <?php the_excerpt();?>
-  <a href="<?php the_permalink();?>">Read more</a>
+    <?php echo campaign_list(array('thumbnail')); ?>
 
-<?php endwhile;?>
-<?php else:?>
+  <?php else : ?>
 
-  <h3>Your search did not return any results</h3>
+    <h2>Your search did not return any results</h2>
 
-<?php endif;?>
+  <?php endif; ?>
+</main>
 
-<?php get_footer();?>
+<?php get_footer(); ?>
