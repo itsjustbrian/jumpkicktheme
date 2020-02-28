@@ -5,8 +5,22 @@
   @include globals.main-content;
   
   display: grid;
-  row-gap: globals.$grid-row-gap;
-  column-gap: globals.$grid-column-gap;
+  row-gap: 40px;
+  column-gap: 20px;
+
+  .first-post {
+
+    .post-title {
+      margin-top: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    img {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      max-width: 100vw;
+    }
+  }
 
   @media #{globals.$mobile-small-query} {
     grid: "first-post first-post"
@@ -20,10 +34,19 @@
   @media #{globals.$mobile-query} {
     grid: "first-post first-post second-post"
           "first-post first-post third-post"
+          "divider divider divider"
           / 1fr 1fr 1fr;
 
-    column-gap: globals.$grid-column-gap * 2;
-          
+    column-gap: 25px;
+    
+    .first-post {
+      margin: 0;
+      img {
+        margin: 0;
+        max-width: 100%;
+      }
+    }
+
     .second-post {
       grid-area: second-post;
     }
@@ -31,6 +54,17 @@
     .third-post {
       grid-area: third-post;
     }
-  }
 
+    .divider {
+      grid-area: divider;
+      width: 90%;
+      justify-self: center;
+      border-style: unset;
+      border-top: globals.$divider-line;
+    }
+  }
+}
+
+.empty-page-message .category-title {
+  text-transform: lowercase;
 }

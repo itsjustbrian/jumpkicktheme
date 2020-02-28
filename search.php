@@ -1,15 +1,29 @@
 <?php get_header(); ?>
 
 <main>
-  <h1>Search Results for: <?php echo get_search_query(); ?></h1>
-
+  <h1 class="search-title post-title">Search Results for: <?php echo get_search_query(); ?></h1>
   <?php if (have_posts()) : ?>
+    <ol class="posts">
+      <?php while (have_posts()) : the_post(); ?>
 
-    <?php echo campaign_list(array('thumbnail')); ?>
+        <li class="post">
+          <article class="col">
+            <a class="post-link" href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('thumbnail'); ?>
+              <h3 class="post-title"><?php the_title(); ?></h3>
+            </a>
+            <?php get_template_part('fundraising-info'); ?>
+          </article>
+        </li>
 
+      <?php endwhile; ?>
+    </ol>
   <?php else : ?>
 
-    <h2>Your search did not return any results</h2>
+    <div class="empty-page-message col">
+      <h2 class="empty-page-message">Your search did not return any results</h2>
+      <?php get_template_part('home-button'); ?>
+    </div>
 
   <?php endif; ?>
 </main>

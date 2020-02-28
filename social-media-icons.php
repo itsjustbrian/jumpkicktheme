@@ -1,22 +1,39 @@
-<?php function social_media_icons($classStr) { ob_start(); ?>
 
-  <ul class="social-media-icons <?php echo $classStr ?>">
-    <li>
-      <a class="icon-button" target="_blank" href="https://twitter.com" rel="noopener" aria-label="Twitter">
-        <img src="<?php echo get_template_directory_uri() ?>/images/logos/logo_twitter.svg" alt="Twitter">
-      </a>
-    </li>
-    <li>
-      <a class="icon-button" target="_blank" href="https://facebook.com" rel="noopener" aria-label="Facebook">
-        <img src="<?php echo get_template_directory_uri() ?>/images/logos/logo_facebook.svg" alt="Facebook">
-      </a>
-    </li>
-    <li>
-      <a class="icon-button" target="_blank" href="https://instagram.com" rel="noopener" aria-label="Instagram">
-        <img src="<?php echo get_template_directory_uri() ?>/images/logos/logo_instagram.svg" alt="Instagram">
-      </a>
-    </li>
-  </ul>
+<?php 
+  function getPlatform($menu_item) {
+    $socialPlatformNames = array(
+      'twitter',
+      'facebook',
+      'instagram',
+      'youtube',
+      'medium',
+      'linkedin'
+    );
+
+    foreach ($socialPlatformNames as $name) {
+      $pos = strpos($menu_item->url, $name);
+      if ($pos === false) continue;
+      return $name;
+    }
+  }
+?>
+
+<?php function social_media_icons($classStr) { 
+  ob_start();
+  $menu_items = wp_get_nav_menu_items('social-media'); ?>
+  
+  <nav aria-label="Social media navigation" class="social-media-icons menu <?php echo $classStr; ?>">
+    <ul class="row">
+      <?php foreach ($menu_items as $menu_item): ?>
+        <?php $platform = getPlatform($menu_item); ?>
+        <li>
+          <a class="icon-button" target="_blank" href="<?php echo $menu_item->url; ?>" rel="noopener" aria-label="<?php echo $platform; ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/images/logos/logo_<?php echo $platform; ?>.svg" alt="<?php echo $platform; ?>">
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </nav>
   
 <?php return ob_get_clean(); } ?>
 

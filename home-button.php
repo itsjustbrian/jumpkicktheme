@@ -1,0 +1,1 @@
+<a class="theme-button" href="<?php echo get_home_url(); ?>">Go back home</a>

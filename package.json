@@ -6,17 +6,24 @@
   "scripts": {
     "watch": "concurrently --kill-others \"npm run watch-sass\" \"npm run watch-ts\"",
     "watch-sass": "sass --watch sass/style.scss:style.css sass/src/:css/",
-    "watch-ts": "tsc --watch",
-    "build": "sass sass/style.scss:style.css sass/src/:css/ && postcss style.css --use autoprefixer --map=false --replace && postcss css/ --use autoprefixer --map=false --replace && tsc",
+    "watch-ts": "webpack --watch --mode none",
+    "build": "sass sass/style.scss:style.css sass/src/:css/ && postcss style.css --use autoprefixer --map=false --replace && postcss css/ --use autoprefixer --map=false --replace && webpack --mode none"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/micromodal": "^0.3.1",
     "autoprefixer": "^9.7.4",
     "concurrently": "^5.1.0",
     "postcss": "^7.0.26",
     "postcss-cli": "^7.1.0",
     "sass": "^1.25.0",
-    "typescript": "^3.7.5"
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.2"
   }
 }

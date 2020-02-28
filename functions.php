@@ -16,18 +16,24 @@ function load_stylesheets() {
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
 function loadjs() {
-  wp_register_script('javascript', get_template_directory_uri() . '/js/main.js', '', false, true);
-  wp_enqueue_script('javascript');
+  wp_register_script('default_scripts', get_template_directory_uri() . '/js/main.js', '', false, true);
+  wp_enqueue_script('default_scripts');
 }
 add_action('wp_enqueue_scripts', 'loadjs');
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
 add_theme_support('menus');
 
 register_nav_menus(
   array(
-    'top-menu' => __('Top Menu', 'theme'),
-    'main-menu' => __('Main Menu', 'theme'),
-    'footer-menu' => __('Footer Menu', 'theme')
+    'page-navigation' => __('Page Navigation', 'theme'),
+    'main-navigation' => __('Main Navigation', 'theme'),
+    'social-media' => __('Social Media', 'theme')
   )
 );
 
@@ -52,15 +58,17 @@ function content_image_sizes_attr($sizes, $size) {
 //add_filter('wp_calculate_image_sizes', 'content_image_sizes_attr', 10, 2);
 
 function post_thumbnail_sizes_attr($attr, $attachment, $size) {
-  switch($size) {
-    case 'thumbnail':
+  if (is_archive()) {
+    if ($size == 'thumbnail')
       $attr['sizes'] = '(min-width: 1055px) 328px, (min-width: 800px) 33.3vw, (min-width: 510px) 50vw, 100vw';
-      break;
-    case 'medium':
-    case 'large':
+    if ($size == 'large')
       $attr['sizes'] = '(min-width: 1055px) 676px, (min-width: 800px) 66.6vw, 100vw';
-    break;
   }
+
+  if (is_single()) {
+    $attr['sizes'] = '(min-width: 1055px) 638px, (min-width: 960px) calc(64vw - 64px), (min-width: 800px) 799px, 100vw';
+  }
+
   return $attr;
 }
 add_filter('wp_get_attachment_image_attributes', 'post_thumbnail_sizes_attr', 10, 3);

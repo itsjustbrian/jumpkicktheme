@@ -1,12 +1,17 @@
 @use "../include/globals";
 @use "../include/campaign-info";
 
+.search-title {
+  @include globals.main-content;
+  margin-bottom: 2rem;
+}
+
 .posts {
   
   @include globals.main-content;
   display: grid;
-  column-gap: globals.$grid-column-gap;
-  row-gap: globals.$grid-row-gap;
+  column-gap: 20px;
+  row-gap: 32px;
 
   @media #{globals.$mobile-small-query} {
     grid-template-columns: 1fr 1fr;

@@ -1,5 +1,7 @@
-  <div class="fundraising-info col">
-    <h5 class="backers"><?php echo number_format(get_field('number_of_backers')); ?> backers</h5>
-    <progress value="<?php echo get_field('amount_raised'); ?>" max="<?php echo get_field('funding_goal'); ?>"></progress>
-    <p class="amount"><span><?php echo '$' . number_format(get_field('amount_raised')); ?> raised</span> of <?php echo '$' . number_format(get_field('funding_goal')); ?></p>
-  </div>
+<div class="fundraising-info col">
+  <h5 class="fundraising-backers">
+    <?php get_template_part('fundraising-backers'); ?>
+  </h5>
+  <?php get_template_part('fundraising-progress'); ?>
+  <h4 class="fundraising-amount"><?php get_template_part('fundraising-amount'); ?></h4>
+</div>

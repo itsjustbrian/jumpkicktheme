@@ -1,0 +1,1 @@
+<progress class="fundraising-progress" value="<?php echo get_field('amount_raised'); ?>" max="<?php echo get_field('funding_goal'); ?>"></progress>

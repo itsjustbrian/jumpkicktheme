@@ -10,5 +10,6 @@ article {
   .page-content {
     @include globals.main-content;
     max-width: $page-width - 55px;
+    margin-top: 24px;
   }
 }

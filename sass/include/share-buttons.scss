@@ -1,0 +1,50 @@
+@use "../include/globals";
+
+$width: 48px;
+$height: 30px;
+$icon-size: 17px;
+$border-radius: 3px;
+
+.share-buttons {
+  a {
+    @include globals.touch-target-padding($width, $height);
+    color: #ffffff;
+  }
+
+  .icon-container {
+    @include globals.center;
+    width: $width;
+    height: $height;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .icon {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  .facebook-share .icon-container {
+    background-color: globals.$facebook-color;
+  }
+
+  .twitter-share .icon-container {
+    background-color: globals.$twitter-color;
+  }
+
+  .email-share .icon-container {
+    background-color: globals.$default-share-color;
+  }
+
+  li:first-child .icon-container {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  li:last-child .icon-container {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}

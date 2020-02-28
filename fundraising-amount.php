@@ -1,0 +1,1 @@
+<?php echo '$' . number_format(get_field('amount_raised')); ?> raised <span>of <?php echo '$' . number_format(get_field('funding_goal')); ?></span>

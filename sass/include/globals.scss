@@ -1,23 +1,34 @@
-$mobile-break: 800px;
 $mobile-small-break: 510px;
+$mobile-break: 800px;
+$mobile-large-break: 960px;
 $desktop-small-break: 1055px;
-$mobile-query: "screen and (min-width: #{$mobile-break})";
 $mobile-small-query: "screen and (min-width: #{$mobile-small-break})";
+$mobile-query: "screen and (min-width: #{$mobile-break})";
+$mobile-large-query: "screen and (min-width: #{$mobile-large-break})";
 $desktop-small-query: "screen and (min-width: #{$desktop-small-break})";
-$grid-column-gap: 20px;
-$grid-row-gap: 32px;
-$main-padding: 16px;
-$main-spacing: 32px;
+$main-side-padding: 16px;
+$main-top-space: 18px;
+$main-bottom-space: 40px;
 $top-nav-height: 56px;
+$desktop-header-height: 179px;
 $footer-height: 185px;
 $icon-size: 24px;
-$icon-touch-size: 48px;
-$icon-padding: ($icon-touch-size - $icon-size) / 2;
+$touch-target-size: 48px;
+$icon-padding: ($touch-target-size - $icon-size) / 2;
+$menu-item-padding: 12px;
 $divider-line: 1px solid #ddd;
+$logo-height: 30px;
+
+$default-line-height: 1.5em;
 
 $theme-primary-color: #34ca96;
-$primary-font-color: #333;
-$secondary-font-color: #666;
+$primary-text-color: #333;
+$secondary-text-color: #666;
+$hover-color: rgba(0, 0, 0, 0.02);
+
+$facebook-color: #3b5998;
+$twitter-color: #1da1f2;
+$default-share-color: #323b43;
 
 @mixin main-content {
   width: 100%;
@@ -31,4 +42,22 @@ $secondary-font-color: #666;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+@mixin touch-target-padding($width: null, $height: null) {
+  $padding-left-right: 0;
+  $padding-top-bottom: 0;
+  @if ($width != null) {
+    $padding-left-right: max(($touch-target-size - $width) / 2, 0);
+  }
+  @if ($height != null) {
+    $padding-top-bottom: max(($touch-target-size - $height) / 2, 0);
+  }
+  padding: $padding-left-right $padding-top-bottom;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
