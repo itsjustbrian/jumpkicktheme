@@ -33,6 +33,13 @@ ol {
   padding: 0;
 }
 
+hr, .divider {
+  width: 90%;
+  justify-self: center;
+  border-style: unset;
+  border-top: globals.$divider-line;
+}
+
 button {
   display: block;
   padding: 0;
@@ -89,7 +96,7 @@ p:first-child {
   box-sizing: border-box;
   background-color: globals.$theme-primary-color;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.25s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   padding: 0.7em 1em;
   border-radius: 2em;
   color: #ffffff;
@@ -112,7 +119,7 @@ p:first-child {
   &:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transform: scale(0.95);
-    transition: all 0.08s ease-in-out;
+    transition: transform 0.08s ease-in-out, box-shadow 0.08s ease-in-out;
   }
 }
 
@@ -137,7 +144,8 @@ p:first-child {
 
 .custom-logo {
   height: globals.$logo-height;
-  width: auto;
+  // Intrinsic logo size
+  width: globals.$logo-height * (300/38);
 }
 
 .social-media-icons {
@@ -173,6 +181,20 @@ p:first-child {
   }
 }
 
+.search-overlay {
+  @include globals.stretch;
+  top: -100px;
+  bottom: -100px;
+  position: fixed;
+  margin-top: globals.$top-nav-height;
+  background-color: rgba(51,51,51,.45);
+
+  @media #{globals.$mobile-query} {
+    top: 0;
+    bottom: 0;
+  }
+}
+
 #top-menu-modal {
 
   .modal-container {
@@ -183,7 +205,6 @@ p:first-child {
   
     .modal-header {
       min-height: globals.$top-nav-height;
-      margin-bottom: 10px;
       justify-content: center;
 
       .close-modal {
@@ -197,6 +218,7 @@ p:first-child {
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
       align-items: center;
+      padding: 10px 0;
 
       .modal-menu {
         width: 80%;
@@ -211,9 +233,14 @@ p:first-child {
 }
 
 header.main-header {
+  top: 0;
+  z-index: 2;
+  background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px -2px;
+  position: sticky;
   @media #{globals.$mobile-query} {
     box-shadow: unset;
+    position: unset;
   }
 
   section:not(.top-section) {
@@ -246,7 +273,7 @@ header.main-header {
     will-change: transform;
 
     .search-box {
-      z-index: 2;
+      z-index: 3;
       pointer-events: initial;
       width: 100%;
       height: 93%;
@@ -257,7 +284,7 @@ header.main-header {
       -webkit-appearance: none;
       transform: translate3d(0, -100%, 0);
       transition: transform 0.2s;
-      &:focus {
+      &.is-open {
         transform: translate3d(0, 0, 0);
         transition: transform 0.2s;
       }
@@ -299,12 +326,19 @@ header.main-header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   min-height: calc(100vh - #{globals.$top-nav-height});
   margin-top: globals.$main-top-space;
   margin-bottom: globals.$main-bottom-space;
   padding-left: globals.$main-side-padding;
   padding-right: globals.$main-side-padding;
+
+  .posts {
+    margin-bottom: 40px;
+  }
 
   .post-title {
     color: globals.$primary-text-color;

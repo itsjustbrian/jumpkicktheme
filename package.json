@@ -24,6 +24,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "body-scroll-toggle": "^0.2.0",
     "micromodal": "^0.4.2"
   }
 }

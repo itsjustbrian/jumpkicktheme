@@ -74,4 +74,4 @@ function post_thumbnail_sizes_attr($attr, $attachment, $size) {
 add_filter('wp_get_attachment_image_attributes', 'post_thumbnail_sizes_attr', 10, 3);
 
 include "social-media-icons.php";
-include "campaign-list.php";
+include "next-posts-button.php";

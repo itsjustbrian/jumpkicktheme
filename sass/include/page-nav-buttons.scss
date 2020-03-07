@@ -1,0 +1,37 @@
+@use "globals.scss";
+
+.page-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: globals.$touch-target-size;
+  transition: transform 0.2s ease-in-out;
+  padding: 0 1.2em;
+  border: 2px solid globals.$theme-primary-color;
+  border-radius: 2em;
+  color: globals.$theme-primary-color;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  user-select: none;
+  will-change: transform;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.08s ease-in-out;
+  }
+
+  label {
+    cursor: pointer;
+    position: relative;
+    bottom: 1px;
+  }
+
+  svg {
+    fill: globals.$theme-primary-color;
+  }
+}

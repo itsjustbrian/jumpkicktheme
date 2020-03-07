@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-  <h1 class="search-title post-title">Search Results for: <?php echo get_search_query(); ?></h1>
+  <h1 class="search-title post-title"><?php echo $wp_query->found_posts ?> results for "<?php echo get_search_query(); ?>"</h1>
   <?php if (have_posts()) : ?>
     <ol class="posts">
       <?php while (have_posts()) : the_post(); ?>
@@ -18,6 +18,9 @@
 
       <?php endwhile; ?>
     </ol>
+
+    <?php echo next_posts_button('Next page'); ?>
+
   <?php else : ?>
 
     <div class="empty-page-message col">

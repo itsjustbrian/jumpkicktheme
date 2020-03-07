@@ -21,7 +21,8 @@ $logo-height: 30px;
 
 $default-line-height: 1.5em;
 
-$theme-primary-color: #34ca96;
+//$theme-primary-color: #34ca96;
+$theme-primary-color: #27963c;
 $primary-text-color: #333;
 $secondary-text-color: #666;
 $hover-color: rgba(0, 0, 0, 0.02);
@@ -53,7 +54,7 @@ $default-share-color: #323b43;
   @if ($height != null) {
     $padding-top-bottom: max(($touch-target-size - $height) / 2, 0);
   }
-  padding: $padding-left-right $padding-top-bottom;
+  padding: $padding-top-bottom $padding-left-right;
 }
 
 @mixin center {

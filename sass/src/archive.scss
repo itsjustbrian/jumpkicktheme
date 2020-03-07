@@ -1,5 +1,6 @@
 @use "../include/globals";
 @use "../include/campaign-info";
+@use "../include/page-nav-buttons.scss";
 
 .posts {
   @include globals.main-content;
@@ -57,10 +58,7 @@
 
     .divider {
       grid-area: divider;
-      width: 90%;
-      justify-self: center;
-      border-style: unset;
-      border-top: globals.$divider-line;
+      margin: 0;
     }
   }
 }

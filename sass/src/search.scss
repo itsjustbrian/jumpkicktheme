@@ -1,24 +1,32 @@
 @use "../include/globals";
 @use "../include/campaign-info";
+@use "../include/page-nav-buttons.scss";
 
-.search-title {
-  @include globals.main-content;
-  margin-bottom: 2rem;
-}
+main {
+  h1.search-title {
+    @include globals.main-content;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
 
-.posts {
-  
-  @include globals.main-content;
-  display: grid;
-  column-gap: 20px;
-  row-gap: 32px;
-
-  @media #{globals.$mobile-small-query} {
-    grid-template-columns: 1fr 1fr;
+    @media #{globals.$mobile-query} {
+      font-size: 2rem;
+    }
   }
 
-  @media #{globals.$mobile-query} {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  .posts {
+    
+    @include globals.main-content;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 32px;
 
+    @media #{globals.$mobile-small-query} {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media #{globals.$mobile-query} {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+  }
 }
