@@ -1,5 +1,7 @@
 <?php
   $numBackers = get_field('number_of_backers');
-  echo number_format($numBackers);
-  echo $numBackers > 1 ? ' backers' : ' backer';
+  if ($numBackers && is_numeric($numBackers)) {
+    echo number_format($numBackers);
+    echo $numBackers > 1 ? ' backers' : ' backer';
+  }
 ?>

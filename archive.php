@@ -1,3 +1,5 @@
+<?php require_once(get_template_directory() . '/next-posts-button.php'); ?>
+
 <?php get_header(); ?>
 
 <main>
@@ -15,7 +17,7 @@
         <li class="post <?php if ($count < 4 && $paged == 0) echo $postClasses[$count - 1]; ?>">
           <article class="col">
             <a class="post-link" href="<?php the_permalink(); ?>">
-              <?php if ($count == 1 && $paged == 0) the_post_thumbnail('large');
+              <?php if ($count == 1 && $paged == 0) the_post_thumbnail('medium');
               else the_post_thumbnail('thumbnail'); ?>
               <?php if ($count == 1 && $paged == 0) : ?>
                 <h1 class="post-title"><?php the_title(); ?></h1>

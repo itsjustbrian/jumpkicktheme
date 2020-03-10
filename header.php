@@ -1,3 +1,5 @@
+<?php require_once(get_template_directory() . '/social-media-icons.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

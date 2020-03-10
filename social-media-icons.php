@@ -1,5 +1,5 @@
 
-<?php 
+<?php
   function getPlatform($menu_item) {
     $socialPlatformNames = array(
       'twitter',
@@ -28,7 +28,7 @@
         <?php $platform = getPlatform($menu_item); ?>
         <li>
           <a class="icon-button" target="_blank" href="<?php echo $menu_item->url; ?>" rel="noopener" aria-label="<?php echo $platform; ?>">
-            <img src="<?php echo get_template_directory_uri() ?>/images/logos/logo_<?php echo $platform; ?>.svg" alt="<?php echo $platform; ?>">
+            <img width="24" height="24" class="icon" src="<?php echo get_template_directory_uri() ?>/images/logos/logo_<?php echo $platform; ?>.svg" alt="<?php echo $platform; ?>">
           </a>
         </li>
       <?php endforeach; ?>

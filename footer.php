@@ -1,3 +1,4 @@
+<?php require_once(get_template_directory() . '/social-media-icons.php'); ?>
 
 <footer class="col">
   <?php the_custom_logo(); ?>

@@ -53,6 +53,15 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+
+  &[data-lazy-src] {
+	  opacity: 0;
+  }
+
+  &.lazyloaded {
+	  transition: opacity 0.5s ease 0s;
+	  opacity: 1;
+  }
 }
 
 svg {
@@ -92,6 +101,7 @@ p:first-child {
 
 .theme-button {
   cursor: pointer;
+  text-align: center;
   line-height: 1.5;
   box-sizing: border-box;
   background-color: globals.$theme-primary-color;
@@ -186,7 +196,7 @@ p:first-child {
   top: -100px;
   bottom: -100px;
   position: fixed;
-  margin-top: globals.$top-nav-height;
+  //margin-top: globals.$top-nav-height;
   background-color: rgba(51,51,51,.45);
 
   @media #{globals.$mobile-query} {
@@ -202,7 +212,18 @@ p:first-child {
     position: fixed;
     padding-left: globals.$main-side-padding - globals.$icon-padding;
     padding-right: globals.$main-side-padding - globals.$icon-padding;
-  
+    
+    &::after {
+      content: '';
+      height: 100px;
+      width: 100vw;
+      background-color: globals.$background-color;
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
+    }
+
     .modal-header {
       min-height: globals.$top-nav-height;
       justify-content: center;
@@ -265,6 +286,7 @@ header.main-header {
   }
 
   .search-form {
+    z-index: 3;
     @include globals.stretch;
     overflow: hidden;
     pointer-events: none;
@@ -273,7 +295,7 @@ header.main-header {
     will-change: transform;
 
     .search-box {
-      z-index: 3;
+      //z-index: 3;
       pointer-events: initial;
       width: 100%;
       height: 93%;

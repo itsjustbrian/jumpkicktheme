@@ -40,38 +40,39 @@ register_nav_menus(
 add_theme_support('post-thumbnails');
 add_theme_support('custom-logo');
 
-add_image_size('very-small', 480, 270, true);
-add_image_size('super-small', 320, 180, true);
-add_image_size('ultra-small', 229, 129, true);
-add_image_size('semi-full', 1200, 675, true);
-
-function remove_thumbnail_width_height($html, $post_id, $post_thumbnail_id, $size, $attr) {
-  $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
-  return $html;
-}
-//add_filter('post_thumbnail_html', 'remove_thumbnail_width_height', 10, 5);
-
-function content_image_sizes_attr($sizes, $size) {
-  $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
-  return $sizes;
-}
-//add_filter('wp_calculate_image_sizes', 'content_image_sizes_attr', 10, 2);
-
-function post_thumbnail_sizes_attr($attr, $attachment, $size) {
-  if (is_archive()) {
-    if ($size == 'thumbnail')
-      $attr['sizes'] = '(min-width: 1055px) 328px, (min-width: 800px) 33.3vw, (min-width: 510px) 50vw, 100vw';
-    if ($size == 'large')
-      $attr['sizes'] = '(min-width: 1055px) 676px, (min-width: 800px) 66.6vw, 100vw';
+function init_image_sizes() {
+  // Nuke em'
+  foreach (get_intermediate_image_sizes() as $size) {
+    if (!in_array($size, array('thumbnail', 'medium', 'medium_large', 'large'))) {
+      remove_image_size($size);
+    }
   }
 
+  // Make mine
+  add_image_size('medium', get_option('medium_size_w'), get_option('medium_size_h'), true);
+  add_image_size('large', get_option('large_size_w'), get_option('large_size_h'), true);
+  add_image_size('medium_large', 1200, 675, true);
+  add_image_size('very_small', 480, 270, true);
+  add_image_size('ultra_small', 229, 129, true);
+}
+add_action('init', 'init_image_sizes');
+
+function post_thumbnail_sizes_attr($attr, $attachment, $size) {
   if (is_single()) {
     $attr['sizes'] = '(min-width: 1055px) 638px, (min-width: 960px) calc(64vw - 64px), (min-width: 800px) 799px, 100vw';
+  } else {
+    if ($size == 'thumbnail')
+      $attr['sizes'] = '(min-width: 1055px) 328px, (min-width: 800px) 33.3vw, (min-width: 510px) 50vw, 100vw';
+    if ($size == 'medium')
+      $attr['sizes'] = '(min-width: 1055px) 676px, (min-width: 800px) 66.6vw, 100vw';
   }
 
   return $attr;
 }
 add_filter('wp_get_attachment_image_attributes', 'post_thumbnail_sizes_attr', 10, 3);
 
-include "social-media-icons.php";
-include "next-posts-button.php";
+function rocket_lazyload_exclude_class($attributes) {
+  array_push($attributes, 'class="custom-logo"', 'class="icon"');
+  return $attributes;
+}
+add_filter('rocket_lazyload_excluded_attributes', 'rocket_lazyload_exclude_class');

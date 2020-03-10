@@ -1,3 +1,5 @@
+<?php require_once(get_template_directory() . '/next-posts-button.php'); ?>
+
 <?php get_header(); ?>
 
 <main>
