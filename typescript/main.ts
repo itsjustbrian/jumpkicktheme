@@ -5,6 +5,7 @@ const $ = (id) => document.getElementById(id);
 const $$ = (selector) => document.querySelector(selector);
 const body = document.body;
 
+// Show search input and add clickable overlay
 const onSearchButtonClicked = (event) => {
   const searchBox = $('searchBox');
   searchBox.addEventListener('transitionend', () => {
@@ -23,6 +24,7 @@ const onSearchButtonClicked = (event) => {
   searchBox.classList.add('is-open');
 };
 
+// Allows this to be directly referenced in HTML
 window['onSearchButtonClicked'] = onSearchButtonClicked;
 
 const iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);

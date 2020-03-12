@@ -33,7 +33,8 @@ register_nav_menus(
   array(
     'page-navigation' => __('Page Navigation', 'theme'),
     'main-navigation' => __('Main Navigation', 'theme'),
-    'social-media' => __('Social Media', 'theme')
+    'social-media' => __('Social Media', 'theme'),
+    'donate-button' => __('Donate Button', 'theme')
   )
 );
 
@@ -76,3 +77,24 @@ function rocket_lazyload_exclude_class($attributes) {
   return $attributes;
 }
 add_filter('rocket_lazyload_excluded_attributes', 'rocket_lazyload_exclude_class');
+
+function get_menu_items_by_registered_slug($menu_slug) {
+  $menu_items = array();
+  if (($locations = get_nav_menu_locations()) && isset($locations[$menu_slug])) {
+    $menu = get_term($locations[$menu_slug]);
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+  }
+  
+  return $menu_items;
+}
+
+//Exclude pages from WordPress Search
+if (!is_admin()) {
+  function wpb_search_filter($query) {
+    if ($query->is_search) {
+      $query->set('post_type', 'post');
+    }
+    return $query;
+  }
+  add_filter('pre_get_posts', 'wpb_search_filter');
+}

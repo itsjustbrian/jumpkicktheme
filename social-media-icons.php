@@ -20,7 +20,7 @@
 
 <?php function social_media_icons($classStr) { 
   ob_start();
-  $menu_items = wp_get_nav_menu_items('social-media'); ?>
+  $menu_items = get_menu_items_by_registered_slug('social-media'); ?>
   
   <nav aria-label="Social media navigation" class="social-media-icons menu <?php echo $classStr; ?>">
     <ul class="row">

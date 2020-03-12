@@ -16,7 +16,12 @@
             <?php echo '$' . number_format(get_field('amount_raised')); ?><span> raised of <?php echo '$' . number_format(get_field('funding_goal')); ?></span>
           </h2>
         </div>
-        <button class="theme-button">Donate now</button>
+        <?php
+        $menu_items = get_menu_items_by_registered_slug('donate-button');
+        if ($menu_items && count($menu_items)) : ?>
+          <?php $menu_item = $menu_items[0]; ?>
+          <a class="theme-button" href="<?php echo $menu_item->url ?>">Donate now</a>
+        <?php endif; ?>
         <ul class="share-buttons row">
           <li>
             <a class="facebook-share" href="https://facebook.com/sharer.php?u=<?php the_permalink(); ?>" title="Share to Facebook" target="_blank">
