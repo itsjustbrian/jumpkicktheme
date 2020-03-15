@@ -7,12 +7,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <title><?php $pageTitle = 'Jumpkick';
-          if (is_category()) $pageTitle = single_cat_title() . ' - ' . $pageTitle;
-          elseif (is_page()) $pageTitle = the_title() . ' - ' . $pageTitle;
-          elseif (is_single()) $pageTitle = the_title();
-          echo $pageTitle; ?></title>
-
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
 
   <?php wp_head(); ?>
