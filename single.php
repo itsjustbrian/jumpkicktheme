@@ -13,7 +13,7 @@
           </h5>
           <?php get_template_part('fundraising-progress'); ?>
           <h2 class="fundraising-amount">
-            <?php echo '$' . number_format(get_field('amount_raised')); ?><span> raised of <?php echo '$' . number_format(get_field('funding_goal')); ?></span>
+            <?php get_template_part('fundraising-amount'); ?>
           </h2>
         </div>
         <?php
