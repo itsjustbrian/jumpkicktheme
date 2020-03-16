@@ -17,10 +17,6 @@ body {
   line-height: 1.5;
 }
 
-* {
-  word-break: break-word;
-}
-
 a {
   display: block;
   color: globals.$theme-primary-color;
@@ -70,8 +66,14 @@ svg {
   display: block;
 }
 
-article p {
-  font-size: 1.125rem;
+article {
+  p {
+    font-size: 1.125rem;
+  }
+
+  .post-content, .page-content, .post-title {
+    word-break: break-word;
+  }
 }
 
 p:first-child {
