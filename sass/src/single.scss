@@ -66,7 +66,7 @@ article {
           "content side-bar"
           / 9fr 5fr;
 
-    max-width: 1024px;
+    max-width: globals.$main-content-desktop-width;
 
     .wp-post-image {
       max-width: 100%;
