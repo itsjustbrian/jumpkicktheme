@@ -14,8 +14,11 @@ body {
   line-height: 1.5;
 }
 
-a {
+a, img, button, svg {
   display: block;
+}
+
+a {
   color: #27963c;
   text-decoration: none;
   cursor: pointer;
@@ -36,7 +39,6 @@ hr, .divider {
 }
 
 button {
-  display: block;
   padding: 0;
   border: none;
   background: none;
@@ -44,7 +46,6 @@ button {
 }
 
 img {
-  display: block;
   max-width: 100%;
   height: auto;
   border-radius: 4px;
@@ -58,8 +59,14 @@ img.lazyloaded {
   opacity: 1;
 }
 
-svg {
-  display: block;
+.post-content a, .page-content a {
+  display: initial;
+}
+.post-content button, .page-content button {
+  all: initial;
+}
+.post-content ul, .post-content ol, .page-content ul, .page-content ol {
+  all: initial;
 }
 
 article .post-content, article .page-content, article .post-title {
