@@ -60,12 +60,12 @@ add_action('init', 'init_image_sizes');
 
 function post_thumbnail_sizes_attr($attr, $attachment, $size) {
   if (is_single()) {
-    $attr['sizes'] = '(min-width: 1055px) 638px, (min-width: 960px) calc(64vw - 64px), (min-width: 800px) 799px, 100vw';
+    $attr['sizes'] = '(min-width: 1155px) 702px, (min-width: 960px) calc(64vw - 64px), (min-width: 800px) 799px, 100vw';
   } else {
     if ($size == 'thumbnail')
-      $attr['sizes'] = '(min-width: 1055px) 328px, (min-width: 800px) 33.3vw, (min-width: 510px) 50vw, 100vw';
+      $attr['sizes'] = '(min-width: 1155px) 358px, (min-width: 800px) 33.3333vw, (min-width: 510px) 50vw, 100vw';
     if ($size == 'medium')
-      $attr['sizes'] = '(min-width: 1055px) 676px, (min-width: 800px) 66.6vw, 100vw';
+      $attr['sizes'] = '(min-width: 1155px) 741px, (min-width: 800px) 66.6666vw, 100vw';
   }
 
   return $attr;
