@@ -29,7 +29,7 @@
           </article>
         </li>
         <?php if ($count == 3 && $paged == 0) : ?>
-          <div class="divider desktop-only"></div>
+          <li class="divider desktop-only" role="presentation"></li>
         <?php endif; ?>
 
       <?php endwhile; ?>
