@@ -59,22 +59,22 @@ img.lazyloaded {
   opacity: 1;
 }
 
-.post-content a, .page-content a {
-  display: initial;
-}
-.post-content button, .page-content button {
-  all: initial;
-}
-.post-content ul, .post-content ol, .page-content ul, .page-content ol {
-  all: initial;
-}
-
 article .post-content, article .page-content, article .post-title {
   word-break: break-word;
 }
 article .post-content, article .page-content {
   font-size: 1.125rem;
   line-height: 1.6;
+}
+article .post-content a, article .page-content a {
+  display: initial;
+  font-weight: bold;
+}
+article .post-content button, article .page-content button {
+  all: initial;
+}
+article .post-content ul, article .post-content ol, article .page-content ul, article .page-content ol {
+  all: initial;
 }
 
 p:first-child {

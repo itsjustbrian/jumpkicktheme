@@ -63,20 +63,6 @@ img {
   }
 }
 
-.post-content, .page-content {
-  a {
-    display: initial;
-  }
-
-  button {
-    all: initial;
-  }
-
-  ul, ol {
-    all: initial;
-  }
-}
-
 article {
   .post-content, .page-content, .post-title {
     word-break: break-word;
@@ -85,6 +71,19 @@ article {
   .post-content, .page-content {
     font-size: 1.125rem;
     line-height: 1.6;
+
+    a {
+      display: initial;
+      font-weight: bold;
+    }
+
+    button {
+      all: initial;
+    }
+
+    ul, ol {
+      all: initial;
+    }
   }
 }
 
