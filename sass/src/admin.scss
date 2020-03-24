@@ -5,16 +5,16 @@
   color: red;
 }
 .post-content, .page-content p {
-  br:nth-child(2n)+br {
+  br:nth-child(2n) {
     @include error-br;
     &:after {
-      content: 'MAKE THIS A SEPARATE PARAGRAPH PLS';      
+      content: 'MAKE THIS A SEPARATE PARAGRAPH';      
     }
   }
   br:last-child {
     @include error-br;
     &:after {
-      content: 'GET RID OF THE BLANK NEW LINE PLS';
+      content: 'REMOVE THIS BLANK NEW LINE' !important;
     }
   }
 }

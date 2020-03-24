@@ -1,10 +1,10 @@
-.post-content br:nth-child(2n) + br, .page-content p br:nth-child(2n) + br {
+.post-content br:nth-child(2n), .page-content p br:nth-child(2n) {
   content: "";
   display: block;
   color: red;
 }
-.post-content br:nth-child(2n) + br:after, .page-content p br:nth-child(2n) + br:after {
-  content: "MAKE THIS A SEPARATE PARAGRAPH PLS";
+.post-content br:nth-child(2n):after, .page-content p br:nth-child(2n):after {
+  content: "MAKE THIS A SEPARATE PARAGRAPH";
 }
 .post-content br:last-child, .page-content p br:last-child {
   content: "";
@@ -12,5 +12,5 @@
   color: red;
 }
 .post-content br:last-child:after, .page-content p br:last-child:after {
-  content: "GET RID OF THE BLANK NEW LINE PLS";
+  content: "REMOVE THIS BLANK NEW LINE" !important;
 }
