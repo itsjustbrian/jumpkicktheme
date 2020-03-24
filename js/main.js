@@ -109,6 +109,18 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst MicroModal = (() => {\n
 
 /***/ }),
 
+/***/ "./sass/src/admin.scss":
+/*!*****************************!*\
+  !*** ./sass/src/admin.scss ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"css/admin.css\");\n\n//# sourceURL=webpack:///./sass/src/admin.scss?");
+
+/***/ }),
+
 /***/ "./sass/src/archive.scss":
 /*!*******************************!*\
   !*** ./sass/src/archive.scss ***!
@@ -182,13 +194,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var micr
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************!*\
-  !*** multi ./typescript/main.ts ./sass/style.scss ./sass/src/archive.scss ./sass/src/page.scss ./sass/src/search.scss ./sass/src/single.scss ***!
-  \***********************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************!*\
+  !*** multi ./typescript/main.ts ./sass/style.scss ./sass/src/admin.scss ./sass/src/archive.scss ./sass/src/page.scss ./sass/src/search.scss ./sass/src/single.scss ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./typescript/main.ts */\"./typescript/main.ts\");\n__webpack_require__(/*! ./sass/style.scss */\"./sass/style.scss\");\n__webpack_require__(/*! ./sass/src/archive.scss */\"./sass/src/archive.scss\");\n__webpack_require__(/*! ./sass/src/page.scss */\"./sass/src/page.scss\");\n__webpack_require__(/*! ./sass/src/search.scss */\"./sass/src/search.scss\");\nmodule.exports = __webpack_require__(/*! ./sass/src/single.scss */\"./sass/src/single.scss\");\n\n\n//# sourceURL=webpack:///multi_./typescript/main.ts_./sass/style.scss_./sass/src/archive.scss_./sass/src/page.scss_./sass/src/search.scss_./sass/src/single.scss?");
+eval("__webpack_require__(/*! ./typescript/main.ts */\"./typescript/main.ts\");\n__webpack_require__(/*! ./sass/style.scss */\"./sass/style.scss\");\n__webpack_require__(/*! ./sass/src/admin.scss */\"./sass/src/admin.scss\");\n__webpack_require__(/*! ./sass/src/archive.scss */\"./sass/src/archive.scss\");\n__webpack_require__(/*! ./sass/src/page.scss */\"./sass/src/page.scss\");\n__webpack_require__(/*! ./sass/src/search.scss */\"./sass/src/search.scss\");\nmodule.exports = __webpack_require__(/*! ./sass/src/single.scss */\"./sass/src/single.scss\");\n\n\n//# sourceURL=webpack:///multi_./typescript/main.ts_./sass/style.scss_./sass/src/admin.scss_./sass/src/archive.scss_./sass/src/page.scss_./sass/src/search.scss_./sass/src/single.scss?");
 
 /***/ })
 

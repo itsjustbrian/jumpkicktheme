@@ -1,0 +1,20 @@
+// Follow da rules
+@mixin error-br {
+  content: '';
+  display: block;
+  color: red;
+}
+.post-content, .page-content p {
+  br:nth-child(2n)+br {
+    @include error-br;
+    &:after {
+      content: 'MAKE THIS A SEPARATE PARAGRAPH PLS';      
+    }
+  }
+  br:last-child {
+    @include error-br;
+    &:after {
+      content: 'GET RID OF THE BLANK NEW LINE PLS';
+    }
+  }
+}
