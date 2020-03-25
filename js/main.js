@@ -181,26 +181,38 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
-/***/ "./typescript/main.ts":
-/*!****************************!*\
-  !*** ./typescript/main.ts ***!
-  \****************************/
+/***/ "./ts/include/helpers.ts":
+/*!*******************************!*\
+  !*** ./ts/include/helpers.ts ***!
+  \*******************************/
+/*! exports provided: $, $$ */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"$\", function() { return $; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"$$\", function() { return $$; });\nvar $ = function (id) { return document.getElementById(id); };\nvar $$ = function (selector) { return document.querySelector(selector); };\n\n\n//# sourceURL=webpack:///./ts/include/helpers.ts?");
+
+/***/ }),
+
+/***/ "./ts/main.ts":
+/*!********************!*\
+  !*** ./ts/main.ts ***!
+  \********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var micromodal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! micromodal */ \"./node_modules/micromodal/dist/micromodal.es.js\");\n/* harmony import */ var body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! body-scroll-toggle */ \"./node_modules/body-scroll-toggle/index.js\");\n/* harmony import */ var body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar $ = function (id) { return document.getElementById(id); };\nvar $$ = function (selector) { return document.querySelector(selector); };\nvar body = document.body;\n// Show search input and add clickable overlay\nvar onSearchButtonClicked = function (event) {\n    var searchBox = $('searchBox');\n    searchBox.addEventListener('transitionend', function () {\n        $('searchBox').focus({ preventScroll: true });\n    }, { once: true });\n    var overlay = document.createElement('div');\n    overlay.addEventListener('click', function () {\n        $('searchBox').blur();\n    }, { once: true });\n    $('searchBox').addEventListener('blur', function () {\n        overlay.remove();\n        searchBox.classList.remove('is-open');\n    }, { once: true });\n    overlay.classList.add('search-overlay');\n    body.append(overlay);\n    searchBox.classList.add('is-open');\n};\n// Allows this to be directly referenced in HTML\nwindow['onSearchButtonClicked'] = onSearchButtonClicked;\nvar iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);\nif (iOS) {\n    $$('header.main-header').style.position = 'relative'; // No sticky header for iOS\n    body.addEventListener('touchstart', function () { });\n}\nmicromodal__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init({\n    onShow: function () { return body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default.a.disable(); },\n    onClose: function () { return body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default.a.enable(); }\n});\n\n\n//# sourceURL=webpack:///./typescript/main.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var micromodal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! micromodal */ \"./node_modules/micromodal/dist/micromodal.es.js\");\n/* harmony import */ var body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! body-scroll-toggle */ \"./node_modules/body-scroll-toggle/index.js\");\n/* harmony import */ var body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _include_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./include/helpers */ \"./ts/include/helpers.ts\");\n\n\n\nvar body = document.body;\n// Show search input and add clickable overlay\nvar onSearchButtonClicked = function (event) {\n    var searchBox = Object(_include_helpers__WEBPACK_IMPORTED_MODULE_2__[\"$\"])('searchBox');\n    searchBox.addEventListener('transitionend', function () {\n        Object(_include_helpers__WEBPACK_IMPORTED_MODULE_2__[\"$\"])('searchBox').focus({ preventScroll: true });\n    }, { once: true });\n    var overlay = document.createElement('div');\n    overlay.addEventListener('click', function () {\n        Object(_include_helpers__WEBPACK_IMPORTED_MODULE_2__[\"$\"])('searchBox').blur();\n    }, { once: true });\n    Object(_include_helpers__WEBPACK_IMPORTED_MODULE_2__[\"$\"])('searchBox').addEventListener('blur', function () {\n        overlay.remove();\n        searchBox.classList.remove('is-open');\n    }, { once: true });\n    overlay.classList.add('search-overlay');\n    body.append(overlay);\n    searchBox.classList.add('is-open');\n};\n// Allows this to be directly referenced in HTML\nwindow['onSearchButtonClicked'] = onSearchButtonClicked;\nvar iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);\nif (iOS) {\n    Object(_include_helpers__WEBPACK_IMPORTED_MODULE_2__[\"$$\"])('header.main-header').style.position = 'relative'; // No sticky header for iOS\n    body.addEventListener('touchstart', function () { });\n}\nmicromodal__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init({\n    onShow: function () { return body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default.a.disable(); },\n    onClose: function () { return body_scroll_toggle__WEBPACK_IMPORTED_MODULE_1___default.a.enable(); }\n});\n\n\n//# sourceURL=webpack:///./ts/main.ts?");
 
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************!*\
-  !*** multi ./typescript/main.ts ./sass/style.scss ./sass/src/admin.scss ./sass/src/archive.scss ./sass/src/page.scss ./sass/src/search.scss ./sass/src/single.scss ***!
-  \*********************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************!*\
+  !*** multi ./ts/main.ts ./sass/style.scss ./sass/src/admin.scss ./sass/src/archive.scss ./sass/src/page.scss ./sass/src/search.scss ./sass/src/single.scss ***!
+  \*************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./typescript/main.ts */\"./typescript/main.ts\");\n__webpack_require__(/*! ./sass/style.scss */\"./sass/style.scss\");\n__webpack_require__(/*! ./sass/src/admin.scss */\"./sass/src/admin.scss\");\n__webpack_require__(/*! ./sass/src/archive.scss */\"./sass/src/archive.scss\");\n__webpack_require__(/*! ./sass/src/page.scss */\"./sass/src/page.scss\");\n__webpack_require__(/*! ./sass/src/search.scss */\"./sass/src/search.scss\");\nmodule.exports = __webpack_require__(/*! ./sass/src/single.scss */\"./sass/src/single.scss\");\n\n\n//# sourceURL=webpack:///multi_./typescript/main.ts_./sass/style.scss_./sass/src/admin.scss_./sass/src/archive.scss_./sass/src/page.scss_./sass/src/search.scss_./sass/src/single.scss?");
+eval("__webpack_require__(/*! ./ts/main.ts */\"./ts/main.ts\");\n__webpack_require__(/*! ./sass/style.scss */\"./sass/style.scss\");\n__webpack_require__(/*! ./sass/src/admin.scss */\"./sass/src/admin.scss\");\n__webpack_require__(/*! ./sass/src/archive.scss */\"./sass/src/archive.scss\");\n__webpack_require__(/*! ./sass/src/page.scss */\"./sass/src/page.scss\");\n__webpack_require__(/*! ./sass/src/search.scss */\"./sass/src/search.scss\");\nmodule.exports = __webpack_require__(/*! ./sass/src/single.scss */\"./sass/src/single.scss\");\n\n\n//# sourceURL=webpack:///multi_./ts/main.ts_./sass/style.scss_./sass/src/admin.scss_./sass/src/archive.scss_./sass/src/page.scss_./sass/src/search.scss_./sass/src/single.scss?");
 
 /***/ })
 

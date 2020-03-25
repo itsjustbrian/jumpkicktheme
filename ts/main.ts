@@ -1,8 +1,7 @@
 import MicroModal from 'micromodal';
 import bodyScroll from 'body-scroll-toggle';
+import { $, $$ } from './include/helpers';
 
-const $ = (id) => document.getElementById(id);
-const $$ = (selector) => document.querySelector(selector);
 const body = document.body;
 
 // Show search input and add clickable overlay

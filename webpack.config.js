@@ -4,7 +4,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env, { mode }) => ({
-  entry: ['./typescript/main.ts', './sass/style.scss', ...glob.sync('./sass/src/*.scss')],
+  entry: ['./ts/main.ts', './sass/style.scss', ...glob.sync('./sass/src/*.scss')],
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname)
