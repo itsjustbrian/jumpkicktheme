@@ -13,7 +13,7 @@ function load_stylesheets() {
   if (is_single()) wp_enqueue_style('single_styles');
   if (is_search()) wp_enqueue_style('search_styles');
   if (is_page()) wp_enqueue_style('page_styles');
-  if (is_user_logged_in()) wp_enqueue_style('admin_styles');
+  //if (is_user_logged_in()) wp_enqueue_style('admin_styles');
 }
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
