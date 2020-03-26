@@ -384,7 +384,21 @@ main {
   h1.post-title {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    @media #{globals.$mobile-query} {
+      font-size: 1.8rem;
+    }
+    @media #{globals.$desktop-small-query} {
+      font-size: 2em;
+    }
+  }
+
+  h3.post-title {
+    font-size: 1.05rem;
+
+    @media #{globals.$mobile-large-query} {
+      font-size: 1.17rem;
+    }
   }
 
   .empty-page-message {

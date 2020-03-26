@@ -393,7 +393,25 @@ main .post-title {
 main h1.post-title {
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 800px) {
+  main h1.post-title {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1055px) {
+  main h1.post-title {
+    font-size: 2em;
+  }
+}
+main h3.post-title {
+  font-size: 1.05rem;
+}
+@media screen and (min-width: 960px) {
+  main h3.post-title {
+    font-size: 1.17rem;
+  }
 }
 main .empty-page-message {
   -webkit-box-align: center;
