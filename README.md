@@ -3,7 +3,7 @@ Wordpress theme for jumpkick.net
 
 # Develop
 
-Unzip into the `themes` directory of Wordpress site
+Unzip into the `themes` directory of Wordpress site\
 Run `npm install`
 
 Watch files: `npm run watch`\
