@@ -1,5 +1,13 @@
 <?php
 
+function get_decimal_places($number_str) {
+  $decimal_pos = strpos($number_str, '.');
+  if ($decimal_pos !== FALSE) {
+    return strlen($number_str) - $decimal_pos - 1;
+  }
+  return 0;
+}
+
 function load_stylesheets() {
   wp_register_style('default_styles', get_template_directory_uri() . '/style.css', array(), false, 'all');
   wp_register_style('archive_styles', get_template_directory_uri() . '/css/archive.css', array(), false, 'all');
