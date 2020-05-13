@@ -448,3 +448,7 @@ footer .social-media-icons {
     display: none;
   }
 }
+
+.author.url {
+  display: inline;
+}

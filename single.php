@@ -56,6 +56,17 @@
       <div class="post-content">
         <?php the_content(); ?>
       </div>
+      <div class="author">
+          <?php echo 'Author: ' . coauthors_posts_links(null, null, null, null, false) ?>
+          <?php $coauthors = get_coauthors(); 
+                foreach ($coauthors as $coauthor) {
+                  ?> 
+                    <a href=<?php echo $coauthor->website ?? $coauthor->user_url ?>> <?php echo $coauthor->description ?> </a>
+                  <?php
+                }
+          ?>
+          
+      </div>
     </article>
   </main>
 
