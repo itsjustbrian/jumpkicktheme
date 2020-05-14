@@ -16,6 +16,10 @@ function get_author_website_link() {
   return $author_website_link;
 }
 
+function check_rewards_exist() {
+  return get_field('reward_tier_1')['title'] != '';
+}
+
 function load_stylesheets() {
   wp_register_style('default_styles', get_template_directory_uri() . '/style.css', array(), false, 'all');
   wp_register_style('archive_styles', get_template_directory_uri() . '/css/archive.css', array(), false, 'all');

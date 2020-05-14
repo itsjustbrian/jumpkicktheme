@@ -23,11 +23,31 @@
           <a class="theme-button" href="<?php echo $menu_item->url ?>">Donate now</a>
         <?php endif; ?>
         <?php get_template_part('socials'); ?>
-        <h1> Rewards </h1>
-        <?php get_template_part('rewards'); ?>
+        <?php if(check_rewards_exist()): ?>
+        <div class="rewards-aside"> 
+          <h1> Rewards </h1>
+          <?php get_template_part('rewards'); ?>
+        </div>
+        <?php endif; ?>
       </aside>
       <div class="post-content">
-        <?php the_content(); ?>
+        <!-- tabs only show on mobile if rewards present-->
+        <?php if(check_rewards_exist()): ?>
+        <div class="mobile-content-tabs">
+          <div class="mobile-content-tab selected" onclick='onMobileContentTabClicked(event)' show="content-main-wrapper">
+            Campaign
+          </div>
+          <div class="mobile-content-tab"  onclick='onMobileContentTabClicked(event)' show="rewards-main-wrapper">
+            Rewards
+          </div>
+        </div>
+        <?php endif; ?>
+        <div id="content-main-wrapper" >
+          <?php the_content(); ?>
+        </div>
+        <div id="rewards-main-wrapper" hidden>
+          <?php get_template_part('rewards'); ?>
+        </div>
         <div class="author">
           <?php 
             if (function_exists('coauthors_posts_links')) {

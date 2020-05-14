@@ -37,3 +37,24 @@ MicroModal.init({
   onShow: () => bodyScroll.disable(),
   onClose: () => bodyScroll.enable()
 });
+
+//clickable menu items in mobile
+
+const onMobileContentTabClicked = (event : MouseEvent) => {
+  const node = event.target as Element;
+  const num_children = node.parentNode.children.length;
+  for (let i = 0; i < num_children; i++) {
+    const child = node.parentNode.children[i];
+    child.classList.remove('selected');
+    const show_class = child.attributes.getNamedItem('show').value;
+    const show_node = $(show_class);
+    show_node.hidden = true;
+  }
+  node.classList.add('selected');
+  const show_class = node.attributes.getNamedItem('show').value;
+  const show_node = $(show_class);
+  show_node.hidden = false;
+  
+}
+
+window['onMobileContentTabClicked'] = onMobileContentTabClicked;

@@ -21,6 +21,53 @@ article {
         margin-right: -1rem;
         max-width: 100vw;
     }
+    a.reward-link-container {
+        width: 100%;
+        margin-bottom: 1rem;
+        font-weight: normal;
+        display: block;
+        .reward-tier {
+            color: $primary-text-color;
+            border: 1px solid #DDDDDD;
+            padding: 10px;
+            .reward-tier-pledge {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            .reward-tier-title {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .reward-tier-backers {
+                font-size: 0.6rem;
+                color: $secondary-text-color;
+            }
+            p {
+                margin-top: 0;
+                color: $secondary-text-color;
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .mobile-content-tabs {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+        .mobile-content-tab {
+            flex: 1;
+            padding: 10px;
+            color: #AAAAAA;
+            border-bottom: 2px solid #AAAAAA;
+            &.selected {
+                color: $theme-primary-color;
+                border-bottom: 2px solid $theme-primary-color;
+            }
+        }
+        
+    }
     aside {
         align-items: center;
         box-sizing: border-box;
@@ -43,30 +90,8 @@ article {
         .share-icons {
             justify-content: center;
         }
-        .reward-link-container {
-            width: 100%;
-            .reward-tier {
-                color: $primary-text-color;
-                border: 1px solid #DDDDDD;
-                padding: 10px;
-                .reward-tier-pledge {
-                    font-size: 1.1rem;
-                    margin-bottom: 1rem;
-                }
-                .reward-tier-title {
-                    font-size: 1rem;
-                    margin-bottom: 0.5rem;
-                }
-                .reward-tier-backers {
-                    font-size: 0.6rem;
-                    color: $secondary-text-color;
-                }
-                p {
-                    margin-top: 0;
-                    color: $secondary-text-color;
-                    font-size: 0.8rem;
-                }
-            }
+        .rewards-aside {
+            display: none;
         }
     }
     .post-content {
@@ -98,6 +123,12 @@ article {
             max-width: 680px;
             margin-right: 0;
         }
+        .mobile-content-tab {
+            display: none;
+        }
+        #rewards-main-wrapper {
+            display: none;
+        }
         aside {
             position: sticky;
             top: 1rem;
@@ -108,6 +139,9 @@ article {
             box-shadow: 0 0.3125rem 1rem -0.1875rem rgba(0, 0, 0, .2);
             .fundraising-info {
                 flex-direction: column-reverse;
+            }
+            .rewards-aside {
+                display: block;
             }
         }
     }
