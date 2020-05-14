@@ -117,6 +117,7 @@ if (!is_admin()) {
   add_filter('pre_get_posts', 'wpb_search_filter');
 }
 
+
 // Don't need to load it on pages it's not used
 function wpassist_remove_block_library_css() {
   if (!is_page() && !is_single()) {

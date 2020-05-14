@@ -1,16 +1,1 @@
-.post-content br:nth-child(2n), .page-content p br:nth-child(2n) {
-  content: "";
-  display: block;
-  color: red;
-}
-.post-content br:nth-child(2n):after, .page-content p br:nth-child(2n):after {
-  content: "MAKE THIS A SEPARATE PARAGRAPH";
-}
-.post-content br:last-child, .page-content p br:last-child {
-  content: "";
-  display: block;
-  color: red;
-}
-.post-content br:last-child:after, .page-content p br:last-child:after {
-  content: "REMOVE THIS BLANK NEW LINE" !important;
-}
+.page-content p br:nth-child(2n),.post-content br:nth-child(2n){content:"";display:block;color:red}.page-content p br:nth-child(2n):after,.post-content br:nth-child(2n):after{content:"MAKE THIS A SEPARATE PARAGRAPH"}.page-content p br:last-child,.post-content br:last-child{content:"";display:block;color:red}.page-content p br:last-child:after,.post-content br:last-child:after{content:"REMOVE THIS BLANK NEW LINE"!important}

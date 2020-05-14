@@ -1,10 +1,1 @@
-article {
-  width: 100%;
-  max-width: 1124px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-}
-article .page-content {
-  margin-top: 10px;
-}
+article{width:100%;max-width:1124px;margin-left:auto;margin-right:auto;max-width:800px}article .page-content{margin-top:10px}
