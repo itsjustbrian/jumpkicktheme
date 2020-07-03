@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap" rel="stylesheet">
+  <script data-ad-client="ca-pub-7675064447281678" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <?php wp_head(); ?>
 </head>
