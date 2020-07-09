@@ -1,5 +1,15 @@
 <?php get_header(); ?>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- articles top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7675064447281678"
+     data-ad-slot="6463898700"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <?php while (have_posts()) : the_post(); ?>
 
   <main>
@@ -72,5 +82,17 @@
   </main>
 
 <?php endwhile; ?>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- articles bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7675064447281678"
+     data-ad-slot="8944568293"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <?php get_footer(); ?>
