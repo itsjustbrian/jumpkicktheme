@@ -5,7 +5,6 @@
      style="display:block"
      data-ad-client="ca-pub-7675064447281678"
      data-ad-slot="6463898700"
-     data-ad-format="auto"
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
@@ -89,7 +88,6 @@
      style="display:block"
      data-ad-client="ca-pub-7675064447281678"
      data-ad-slot="8944568293"
-     data-ad-format="auto"
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
