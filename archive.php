@@ -1,7 +1,16 @@
 <?php require_once(get_template_directory() . '/next-posts-button.php'); ?>
 
 <?php get_header(); ?>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- main top -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7675064447281678"
+     data-ad-slot="9837550391"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <main>
   <?php if (have_posts()) : ?>
     <ol class="posts">
@@ -46,5 +55,16 @@
 
   <?php endif; ?>
 </main>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- main bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7675064447281678"
+     data-ad-slot="3184512137"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 <?php get_footer(); ?>
